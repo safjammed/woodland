@@ -1,0 +1,416 @@
+/* 
+* Build by : Safayat Jamil 
+* Date : sept 15, 2017;
+* Developers Website: http://safjammed.me;
+* Developed For: ArianDreamHolidays.com;
+* 
+*/
+
+/* FONTS */
+@import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url('https://fonts.googleapis.com/css?family=Gochi+Hand');
+
+
+
+/* GENERAL */
+body{
+    font-family: 'Lato', sans-serif;
+    background: #fff;
+}
+.all-wrap {
+    background: #FFFFFF;
+}
+.cursive{
+    font-family: "Gochi Hand",cursive !important;
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: Montserrat,Arial,sans-serif;
+}
+
+.no-margin{
+    margin:  0;
+}
+
+.no-padding{
+    padding: 0;
+}
+
+.no-border{
+    border: none;
+}
+
+/* NAV and HEADER */
+.navbar-fixed{
+    z-index:  9999999999999999999;
+}
+
+nav i.material-icons{
+    font-size: inherit;
+    display: inline-block;
+}
+
+/* HOME PAGE */
+.home .with-fav i.waves-effect{
+    overflow: inherit;
+}
+
+.card.hoverable.with-fav {
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.card .card-image {
+    overflow: hidden;
+}
+
+.card .card-image img {
+    transform: scale(1)rotate(0deg);
+    filter: grayscale(0%)blur(0px)brightness(100%);
+}
+
+span.card-title {
+    width: 100%;
+    font-weight: bold;
+    text-shadow: 4px 1px 8px #000;
+}
+.card.rotate-img .card-image:hover > img {
+
+    transform: scale(1.2)rotate(10deg);
+    transition: 0.5s;
+    filter: grayscale(22%)blur(3px)brightness(80%);
+    
+}
+
+.card .card-image:hover > .price-cat span{
+    transform:translate(-180%,50%);
+    transition:0.5s;
+    font-size: 3em;
+    padding: 15% 5%
+
+}
+.card .card-image:hover > .price-cat{
+    transform:translate(25%);
+    transition: transform 1s;
+}
+
+
+h6.price-cat {
+    position: absolute;
+    top: 5%;
+    left: 0%;
+    padding: 0 25px;
+    width: 100%;
+    color: white;
+    text-shadow: 4px 1px 8px #000;
+    /* box-shadow: 0px 4px 6px 2px #000; */
+}
+
+h6.price-cat span.right {
+    font-size: 1.5em;
+    border-radius: 100px;
+    padding: 20px 6px;
+}
+.section-title h3 {
+    font-weight: 700;
+    font-size: 2.8em;
+    padding-top: 30px;
+    text-transform: uppercase;
+}
+
+.section-title h3 span {color: #9C27B0;}
+
+section.grey{
+    box-shadow: inset 0px 1px 200px 1px #ccc;
+}
+
+.home .more-options .collection .collection-item {
+    color: #333;
+}
+.banner {
+    position: relative;
+    background: url(../img/banner_bg.png) center bottom no-repeat #fff;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-shadow: 0 2px 5px rgba(0,0,0,.1);
+    -moz-box-shadow: 0 2px 5px rgba(0,0,0,.1);
+    box-shadow: 0 2px 5px rgba(0,0,0,.1);
+    padding: 30px;
+    margin-bottom: 60px;
+}
+
+.banner:after, .banner:before {
+    position: absolute;
+    content: "";
+    z-index: 1;
+    height: 18px;
+    width: 50%;
+    top: 100%;
+}
+
+.banner.colored {
+    background: url(../images/banner_bg_colored.png) center bottom no-repeat #e04f67;
+    color: #fff;
+}
+.banner:before {
+    right: 0;
+    background: url(../images/shadow-bg.png) top right no-repeat;
+}
+.banner:after {
+    left: 0;
+    background: url(../images/shadow-bg.png) top left no-repeat;
+}
+.banner.colored h4 {
+    color: #fff;
+}
+
+.banner h4 {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 32px;
+}
+
+.btn_1.white a:hover, a.btn_1.white:hover {
+    background: #333;
+    color: #fff;
+}
+
+.btn_1, a.btn_1 {
+    border: none;
+    font-family: inherit;
+    color: #fff;
+    background: #51bce6;
+    cursor: pointer;
+    padding: 7px 20px;
+    display: inline-block;
+    outline: 0;
+    font-size: 12px;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    transition: all .3s;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.banner a {
+    position: absolute;
+    top: 35%;
+    right: 30px;
+}
+
+.btn_1.white, a.btn_1.white {
+    background: #fff;
+    color: #e04f67;
+}
+.btn_1.white a:hover, a.btn_1.white:hover {
+    background: #333 !important;
+    color: #fff;
+}
+.info-title h4{
+    font-size: 18px;
+}
+
+
+/* FOOTER */
+footer.page-footer{
+    position: fixed;
+    z-index: -1;
+    bottom: 0;
+    width: 100%;
+    background: url(../images/pattern.png) #333;
+}
+.promo_full {
+    height: auto;
+    background: url(../images/home_bg_2.jpg) center center no-repeat fixed;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    position: relative;
+}
+.promo_full_wp {
+    display: table;
+    width: 100%;
+    height: auto;
+}
+.promo_full_wp>div {
+    display: table-cell;
+    padding: 10% 15%;
+    vertical-align: middle;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+}
+.promo_full_wp div h3 {
+    font-size: 48px;
+    font-weight: 700;
+    color: #fff;
+}
+.promo_full_wp div a i {
+    color: #fff;
+    opacity: .5;
+    font-size: 72px;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
+
+
+.feature_home {
+    text-align: center;
+    padding: 30px;
+    background: #fff;
+    margin-bottom: 30px;
+    color: #888;
+    -webkit-box-shadow: 0 0 5px 0 rgba(0,0,0,.1);
+    -moz-box-shadow: 0 0 5px 0 rgba(0,0,0,.1);
+    box-shadow: 0 0 5px 0 rgba(0,0,0,.1);
+    position:relative;
+}
+.feature_home i {
+    margin: auto auto 20px;
+    display: block;
+    width: 120px;
+    height: 120px;
+    line-height: 110px;
+    text-align: center;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    border: 1px dashed #ccc;
+    font-size: 62px;
+    color: #6dcff6;
+}
+.feature_home h3 {
+    font-size: 20px;
+}
+
+
+.btn_1.outiline, a.btn_1.outline, input .btn_1.outiline {
+    color: #555;
+    background: 0 0;
+    border: 2px solid #555;
+    padding: 5px 18px;
+    cursor: pointer;
+    display: inline-block;
+    outline: 0;
+    font-size: 12px;
+    transition: all .3s;
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.laptop {
+    margin: 20px auto auto;
+}
+
+ul.list_order {
+    margin: 0 0 30px;
+    padding: 0;
+    line-height: 30px;
+    font-size: 14px;
+}
+ul.list_order li {
+    position: relative;
+    padding-left: 40px;
+    margin-bottom: 10px;
+}
+ul.list_order li span {
+    background-color: #e04f67;
+    color: #fff;
+    position: absolute;
+    left: 0;
+    top: 0;
+    text-align: center;
+    font-size: 18px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+}
+#CTA h3 {
+    font-weight: 700;
+    font-size: 2em;
+}
+
+
+
+
+.package-link .card-image {
+    width: 30%;
+}
+.package-link .card-content {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.package-link .card.horizontal .card-image img{
+    width: 100%;
+    /* height: 100%; */
+    padding: 10% 4%;
+}
+.package-link .card.horizontal .card-image p {
+    position: absolute;
+    width: 100%;
+    bottom: -5%;
+    left: 0%;
+    color: white;
+    padding: 10% 5%;
+    background: linear-gradient(180deg, rgba(31, 200, 219, 0) 21%, rgba(0, 0, 0, 0.45) 38%);
+}
+.card.zoom-out .card-image:hover > img {transform: scale(1.2);transition: 0.5s;filter: brightness(80%);}
+
+.card.zoom-out .card-image > img {
+    transform: scale(1.7);
+}
+.border-left-dotted {
+    border-left: 1px dotted grey;
+}
+.package-link .card-image i {
+    position:absolute;
+    right:5%;
+    top: 3%;
+    color:#ffe7e7
+}
+
+  
+  .pin-top {
+    position: relative;
+  }
+
+  
+  .pin-bottom {
+    position: relative;
+  }
+
+  
+  .pinned {
+    position: fixed !important;
+  }
+
+  i.circle.outline {
+    border: 1px dotted;
+    border-color: inherit;
+    padding: 10px;
+}
+
+.pack-details .slider .slides li .caption {
+    color: #fff;
+    position: absolute;
+    bottom: 5%;
+    text-shadow: 1px 1px 1px black;
+    left: 15%;
+    width: 70%;
+    opacity: 0;
+}
+
+.card.rotate-img .card-content .card-title i {
+    line-height: 41px;
+}
