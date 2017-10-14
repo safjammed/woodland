@@ -29,8 +29,8 @@ include_once 'resource/session.php';
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
-    <script type="text/javascript" src="assets/js/tipped.js"></script>
-    <link rel="stylesheet" href="assets/css/tipped.css">
+    <script type="text/javascript" src="http://openexchangerates.github.io/money.js/money.min.js"></script>
+    
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.9.1/sweetalert2.min.css" />
     
@@ -50,40 +50,44 @@ include_once 'resource/session.php';
         <nav class="grey darken-4 nav-extended">
             <div class="divider"></div>
             <div class="nav-wrapper container">
-                <a href="#" class="brand-logo">Logo</a>
+                <a href="#" class="brand-logo">WoodLand Away</a>
                 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a href="index.php">Home</a></li>                    
-                    <li><a class="dropdown-button" href="#!" data-activates="dropdownInternational" data-belowOrigin="true" data-constrainWidth="false">International Holidays<i class="material-icons right">arrow_drop_down</i></a></li>
-                    <li><a class="dropdown-button" href="#!" data-activates="dropdownDomestic" data-belowOrigin="true" data-constrainWidth="false">Domestic Holidays<i class="material-icons right">arrow_drop_down</i></a></li>
-                     <?php if((isset($_SESSION['id']) || isCookieValid($db))): ?>                        
+                    <li><a class="dropdown-button" href="#!" data-activates="dropdownCabins" data-belowOrigin="true" data-constrainWidth="false">Find a Cabin<i class="material-icons right">arrow_drop_down</i></a></li>                   
+                    <li><a class="dropdown-button" href="forum/">Community Forum</a></li>                    
+                     <?php if((isset($_SESSION['id']) || isCookieValid($db))): ?>
                       <li><a class='dropdown-button' href='#!' data-activates='feature-dropdown' data-belowOrigin="true" data-constrainWidth="false">My Account<i class="material-icons bt">arrow_drop_down</i></a></li>
                       <?php else:?>
                         <li><a href="userlogin.php" class="btn purple">Login</a></li>
                       <?php endif ?>
+                      <li>
+                        <div class="row">
+                            <label for="currency">: Currency</label>
+                            <select id="currency" class="currency col s4">
+                              <option value="GBP">GBP</option>
+                              <option value="EUR">EUR</option>
+                              <option value="USD" selected>USD</option>
+                            </select>                            
+                        </div>
+                            
+                        
+                    </li>
                 </ul>
-                <ul class="side-nav" id="mobile-demo">
-                    <li><a href="sass.html">Sass</a></li>
-                    <li><a href="badges.html">Components</a></li>
-                    <li><a href="badges.html">Components2</a></li>
-                </ul>
-                <ul id="dropdownInternational" class="dropdown-content">
-                    <li><a href="packages.php?category">Dubai</a></li>
-                    <li><a href="#!">two</a></li>
+                
+                <ul id="dropdownCabins" class="dropdown-content">
+                    <li><a href="cabins.php?type=1">Luxuxry Cabins</a></li>
+                    <li><a href="cabins.php?type=2">Contemporary Cabins</a></li>
+                    <li><a href="cabins.php?type=3">Original Cabins</a></li>
                     <li class="divider"></li>
-                    <li><a href="#!">three</a></li>
-                </ul>
-                <ul id="dropdownDomestic" class="dropdown-content">
-                    <li><a href="#!">one</a></li>
-                    <li><a href="#!">two</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#!">three</a></li>
-                </ul>
+                    <li><a href="cabins.php">All</a></li>
+                </ul>                
                 <ul id='feature-dropdown' class='dropdown-content'>
-          <li><a href="profile.php">My Profile</a></li>
-          <li><a href="profile.php?settings=1">Profile Settings</a></li>
-          <li><a href="logout.php">Logout</a></li>          
-        </ul>
+                  <li><a href="profile.php">Access Forum</a></li>
+                  <li><a href="profile.php?settings=1">Profile Settings</a></li>
+                  <li class="divider"></li>
+                  <li><a href="logout.php">Logout</a></li>          
+                </ul>
             </div>
         </nav>
     </div>

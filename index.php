@@ -148,8 +148,8 @@ include_once 'partials/head.php';
     <section class="grey lighten-4">
         <div class="section-title center-align">
             <div class="row">
-            <h3 class="animated wow fadeInDown" data-wow-duration="1s"> Lorem <span>Ispum</span> Dolor</h3>
-            <p class="animated wow fadeIn" data-wow-delay="0.5s"> Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>            
+            <h3 class="animated wow fadeInDown" data-wow-duration="1s"> <span>Luxury</span> Cabins</h3>
+            <p class="animated wow fadeIn" data-wow-delay="0.5s"> We offer High Quality Luxury Cabins</p>            
             </div>    
         </div>
         
@@ -254,7 +254,7 @@ include_once 'partials/head.php';
 
             </div>
             <div class="row center-align">
-                    <a class="waves-effect waves-light pink accent-2 btn animated wow bounceIn"><i class="material-icons left">cloud</i>View More Tours</a>
+                    <a class="waves-effect waves-light pink accent-2 btn animated wow bounceIn"><i class="material-icons left">cloud</i>More Luxyry Cabins</a>
                     <br><br>
                     <div class="divider">
                         
@@ -267,8 +267,8 @@ include_once 'partials/head.php';
      <section class="">
         <div class="section-title center-align">
             <div class="row">
-            <h3 class="animated wow fadeInDown" data-wow-duration="1s"> Lorem <span>Ispum</span> Dolor</h3>
-            <p class="animated wow fadeInDown" data-wow-delay="0.5s"> Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>            
+            <h3 class="animated wow fadeInDown" data-wow-duration="1s"> <span>Contemporary</span> Cabins</h3>
+            <p class="animated wow fadeInDown" data-wow-delay="0.5s"> We offer the best Contemporary Cabins</p>            
             </div>    
         </div>
         
@@ -373,7 +373,7 @@ include_once 'partials/head.php';
 
             </div>
             <div class="row center-align">
-                    <a class="waves-effect waves-light pink accent-2 btn animated wow bounceIn"><i class="material-icons left">cloud</i>View More Tours</a>
+                    <a class="waves-effect waves-light pink accent-2 btn animated wow bounceIn"><i class="material-icons left">cloud</i>More Contemporary Cabins</a>
                     <br><br>
                     <div class="divider"></div>
                 </div>    
@@ -381,52 +381,7 @@ include_once 'partials/head.php';
         
     </section>
 
-    <section class="">
-        <div class="section-title center-align">
-            <div class="row">
-            <h3 class="animated wow fadeInDown" data-wow-duration="1s"> Lorem <span>Ispum</span> Dolor</h3>
-            <p class="animated wow fadeInDown" data-wow-delay="0.5s"> Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>            
-            </div>    
-        </div>
-        
-        <div class="section-container container">
-            <div class="row">
-                <div class="col l4 m6">
-                    <ul class="collection no-border">
-                        <li class="collection-item"><div><i class="material-icons left">cloud</i> Alvin<a href="#!" class="secondary-content">$40</a></div></li>
-                        <li class="collection-item"><div><i class="material-icons left">cloud</i> Alvin<a href="#!" class="secondary-content">$40</a></div></li>
-                        <li class="collection-item"><div><i class="material-icons left">cloud</i> Alvin<a href="#!" class="secondary-content">$40</a></div></li>
-                        <li class="collection-item"><div><i class="material-icons left">cloud</i> Alvin<a href="#!" class="secondary-content">$40</a></div></li>
-                        <li class="collection-item"><div><i class="material-icons left">cloud</i> Alvin<a href="#!" class="secondary-content">$40</a></div></li>
-                        <li class="collection-item"><div><i class="material-icons left">cloud</i> Alvin<a href="#!" class="secondary-content">$40</a></div></li>
-                    </ul>
-                </div>
-                <div class="col l4 m6">
-                    <ul class="collection no-border">
-                        <li class="collection-item"><div><i class="material-icons left">cloud</i> Alvin<a href="#!" class="secondary-content">$40</a></div></li>
-                        <li class="collection-item"><div><i class="material-icons left">cloud</i> Alvin<a href="#!" class="secondary-content">$40</a></div></li>
-                        <li class="collection-item"><div><i class="material-icons left">cloud</i> Alvin<a href="#!" class="secondary-content">$40</a></div></li>
-                        <li class="collection-item"><div><i class="material-icons left">cloud</i> Alvin<a href="#!" class="secondary-content">$40</a></div></li>
-                        <li class="collection-item"><div><i class="material-icons left">cloud</i> Alvin<a href="#!" class="secondary-content">$40</a></div></li>
-                        <li class="collection-item"><div><i class="material-icons left">cloud</i> Alvin<a href="#!" class="secondary-content">$40</a></div></li>
-                    </ul>
-                </div>
-                <div class="col l4 m6">
-                    <ul class="collection no-border">
-                        <li class="collection-item"><div><i class="material-icons left">cloud</i> Alvin<a href="#!" class="secondary-content">$40</a></div></li>
-                        <li class="collection-item"><div><i class="material-icons left">cloud</i> Alvin<a href="#!" class="secondary-content">$40</a></div></li>
-                        <li class="collection-item"><div><i class="material-icons left">cloud</i> Alvin<a href="#!" class="secondary-content">$40</a></div></li>
-                        <li class="collection-item"><div><i class="material-icons left">cloud</i> Alvin<a href="#!" class="secondary-content">$40</a></div></li>
-                        <li class="collection-item"><div><i class="material-icons left">cloud</i> Alvin<a href="#!" class="secondary-content">$40</a></div></li>
-                        <li class="collection-item"><div><i class="material-icons left">cloud</i> Alvin<a href="#!" class="secondary-content">$40</a></div></li>
-                    </ul>
-                </div>
-
-
-            </div>
-        </div>
-    </section>
-
+    
     <section>      
     <div class="container">
         <div class="row">

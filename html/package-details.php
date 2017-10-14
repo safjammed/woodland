@@ -27,18 +27,7 @@
 </div>
 
 <div class="container">
-	<div class="row">
-		<nav class="pink accent-2">
-		   <div class="nav-wrapper">
-		     <div class="col s12">
-		       <a href="#!" class="breadcrumb">First</a>
-		       <a href="#!" class="breadcrumb">Second</a>
-		       <a href="#!" class="breadcrumb">Third</a>
-		     </div>
-		   </div>
-		</nav>
-
-		
+	<div class="row">		
 		<div class="col m2">
 			<div class="row">
 		        <div class="col s12">

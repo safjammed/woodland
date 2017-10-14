@@ -80,19 +80,18 @@ span.card-title {
     transform: scale(1.2)rotate(10deg);
     transition: 0.5s;
     filter: grayscale(22%)blur(3px)brightness(80%);
-    
+
 }
 
 .card .card-image:hover > .price-cat span{
-    transform:translate(-180%,50%);
-    transition:0.5s;
-    font-size: 3em;
-    padding: 15% 5%
-
+    /* transform:translate(-180%,50%); */
+    /* transition:0.5s; */
+    /* font-size: 3em; */
+    /* padding: 15% 5%; */
 }
 .card .card-image:hover > .price-cat{
-    transform:translate(25%);
-    transition: transform 1s;
+    /* transform:translate(25%); */
+    /* transition: transform 1s; */
 }
 
 
@@ -380,22 +379,22 @@ ul.list_order li span {
     color:#ffe7e7
 }
 
-  
-  .pin-top {
-    position: relative;
-  }
 
-  
-  .pin-bottom {
+.pin-top {
     position: relative;
-  }
+}
 
-  
-  .pinned {
+
+.pin-bottom {
+    position: relative;
+}
+
+
+.pinned {
     position: fixed !important;
-  }
+}
 
-  i.circle.outline {
+i.circle.outline {
     border: 1px dotted;
     border-color: inherit;
     padding: 10px;
@@ -413,4 +412,34 @@ ul.list_order li span {
 
 .card.rotate-img .card-content .card-title i {
     line-height: 41px;
+}
+
+
+
+
+.package-link-page.slider .slides li .caption {
+    background: RGBA(0,0,0,0.4) !important;
+}
+
+ul.check{
+    list-style: none !important;
+}
+
+ul.check > li {
+    background: url(../images/list_check.png) no-repeat;
+    padding-left: 35px;
+}
+tools.css:151
+ul.check > li {
+    padding: 4px 0 0 30px;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+}
+
+tools.css:99
+ul.check > li {
+    margin-top: 5px;
+}
+.pack-details strong {
+    font-weight: 800;
 }

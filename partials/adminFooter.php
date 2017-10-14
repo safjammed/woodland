@@ -68,8 +68,7 @@
 
 <script src="assets/js/init.js"></script>
 <!-- Page Specific JS Libraries -->
-<script src="assets/libs/d3/d3.v3.js"></script>
-<script src="assets/libs/rickshaw/rickshaw.min.js"></script>
+
 <script src="assets/libs/raphael/raphael-min.js"></script>
 <script src="assets/libs/morrischart/morris.min.js"></script>
 <script src="assets/libs/jquery-knob/jquery.knob.js"></script>
@@ -84,5 +83,22 @@
 <script src="assets/js/apps/todo.js"></script>
 <script src="assets/js/apps/notes.js"></script>
 <script src="assets/js/pages/index.js"></script>
+
+
+<!-- DATATABLES JS -->
+<script src="assets/libs/jquery-datatables/js/jquery.dataTables.min.js"></script>
+<script src="assets/libs/jquery-datatables/js/dataTables.bootstrap.js"></script>
+<script src="assets/libs/jquery-datatables/extensions/TableTools/js/dataTables.tableTools.min.js"></script>
+<script src="assets/js/pages/datatables.js"></script>
+<!-- /DATATABLES JS -->
+
+
+
+<script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip(); 
+});
+</script>
+
 </body>
 </html>
