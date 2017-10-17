@@ -191,7 +191,7 @@ body {
   position: relative;
   z-index: 1;
   border-left: 5px solid #ed2553;
-  margin: 0 0 35px;
+  margin: 0 0 0px;
   padding: 10px 0 10px 50px;
   color: #ed2553;
   font-size: 32px;
@@ -472,7 +472,7 @@ body {
     line-height: 1.5;
 }
 
-input#terms, input#remember {/*float: left;*/position: relative;vertical-align: middle;height: 20px;width: 20px;/*margin-top: 15px;*/margin-bottom: 10px;}
+input#terms, input#remember, input[type=radio] {/*float: left;*/position: relative;vertical-align: middle;height: 20px;width: 20px;/*margin-top: 15px;*/margin-bottom: 10px;}
 
 select {
     width: 100%;

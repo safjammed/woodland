@@ -121,7 +121,25 @@ include_once 'resource/session.php';
         <input type="text" name="email" id="reg-email" required="required"/>
         <label for="reg-email">email</label>
         <div class="bar"></div>
-      </div>      
+      </div>  
+      <div class="input-container">
+        <input type="text" name="username" id="reg-username" required="required"/>
+        <label for="reg-username">Username</label>
+        <div class="bar"></div>
+      </div>   
+      <div class="input-container">          
+            <input type="radio" name="gender" value="male" id="remember" checked/>
+            <label for="male" class="remember">I am a Male</label>
+        </div> 
+        <div class="input-container">          
+            <input type="radio" name="gender" value="female" id="terms"/>
+            <label for="female" class="remember">I am a Female</label>
+        </div> 
+      <div class="input-container">
+        <input type='text' name="address" id="reg-addr" required="required">
+        <label for="reg-addr">Postal Address</label>
+        <div class="bar"></div>
+      </div>
       <div class="input-container">
         <input type="password" name="password" id="reg-password" required="required"/>
         <label for="reg-password" id="password-avl">Password</label>

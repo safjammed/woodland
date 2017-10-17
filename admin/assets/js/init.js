@@ -234,29 +234,6 @@ prettyPrint();
 $(window).resize(debounce(resizeitems,100));
 $("body").trigger("resize");
 
-//SELECT
-$('.selectpicker').selectpicker();
-
-
-//FILE INPUT
-$('input[type=file]').bootstrapFileInput();
-
-
-//DATE PICKER
-$('.datepicker-input').datepicker();
-
-
-//ICHECK
-$('input:not(.ios-switch)').iCheck({
-  checkboxClass: 'icheckbox_square-aero',
-  radioClass: 'iradio_square-aero',
-  increaseArea: '20%' // optional
-});
-
-// IOS7 SWITCH
-$(".ios-switch").each(function(){
-    mySwitch = new Switch(this);
-});
 
 //GALLERY
 $('.gallery-wrap').each(function() { // the containers for all your galleries

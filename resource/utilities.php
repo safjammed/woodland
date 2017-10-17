@@ -6,9 +6,6 @@
 */
 
 
-$GLOBALS['url'] = 'http://aryan.lh'; //Site URL
-$GLOBALS['sitename'] = 'Aryan Dream Holidays';
-
 //PHP mailer
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
@@ -75,7 +72,7 @@ function check_email($poseted_data){
 function show_errors($form_errors_array){
     $errors = "<p><ul style='color: red;'>";
 
-    //loop through error array and display all items in a list
+    //loop through error array and display all cabins in a list
     foreach($form_errors_array as $the_error){
         $errors .= "<li> {$the_error} </li>";
     }
@@ -243,7 +240,7 @@ function swal ($title='',$msg='', $type = 'warning',$redirect='none', $timer = n
 }
 
 
-function numRows($db,$table='items'){
+function numRows($db,$table='cabins'){
     try {
         $sql= "SELECT COUNT(*) FROM ".$table;
         $statement = $db -> prepare($sql);
@@ -266,7 +263,7 @@ function jsRedirect($cls="index.php"){
 //Sends out a mail for activation of the
 function sendActivationMail($email, $fname = 'Dear', $lname ='User'){
     //Get data
-    $sender = 'test.safjammed@gmail.com';
+    $sender = $GLOBALS['email'];
     $message = "<h2>Welcome to ".$GLOBALS['sitename'].", ".$fname." ".$lname."</h2>
                 <p>This mail is to let you know that an account was created in <a href='".$GLOBALS['url']."'>".$GLOBALS['sitename']."</a> and Your Details are below: </p>
                 <br/>
@@ -298,8 +295,8 @@ function sendActivationMail($email, $fname = 'Dear', $lname ='User'){
         $mail->isSMTP();                                      // Set mailer to use SMTP
         $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
         $mail->SMTPAuth = true;                               // Enable SMTP authentication
-        $mail->Username = 'test.safjammed@gmail.com';                 // SMTP username
-        $mail->Password = '01197110308a';                           // SMTP password
+        $mail->Username = $GLOBALS['email'];                 // SMTP username
+        $mail->Password = $GLOBALS['email_password'];                           // SMTP password
         $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
         $mail->Port = 587;                                    // TCP port to connect to
 
@@ -322,6 +319,13 @@ function sendActivationMail($email, $fname = 'Dear', $lname ='User'){
     }
 }
 
+function printTypeOptions($db, $select = -1){
+    $type = array(1 => 'Luxury', 2 => 'Contemporary', 3 => 'Original' );
+    foreach ($type as $key => $value) {
+        echo ($key == $select) ? '<option value="'.$key.'" selected>'.$value.'</option>' :'<option value="'.$key.'">'.$value.'</option>';
+    }
+    
+}
 
 function activateUser($db, $email){
     try{
@@ -348,7 +352,7 @@ function generateRandomString($length = 10) {
 
 function sendForgotPassMail($email, $token){
     //Get data
-    $sender = 'test.safjammed@gmail.com';
+    $sender = $GLOBALS['email'];
     $message = "<h2>Welcome to ".$GLOBALS['sitename']."</h2>
                 <p>This mail is to let you know that an account was created in <a href='".$GLOBALS['url']."'>".$GLOBALS['sitename']."</a>. You have requested Password Reset for:</p>
                 <br/>
@@ -375,8 +379,8 @@ function sendForgotPassMail($email, $token){
         $mail->isSMTP();                                      // Set mailer to use SMTP
         $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
         $mail->SMTPAuth = true;                               // Enable SMTP authentication
-        $mail->Username = 'test.safjammed@gmail.com';                 // SMTP username
-        $mail->Password = '01197110308a';                           // SMTP password
+        $mail->Username = $GLOBALS['email'];                 // SMTP username
+        $mail->Password = $GLOBALS['email_password'];                           // SMTP password
         $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
         $mail->Port = 587;                                    // TCP port to connect to
 
@@ -465,4 +469,434 @@ function updatePassword($db,$hashed_password, $email){
         echo $e->getMessage();
     }
 }
+
+//Gets all the cabins that has been added
+function printAllItemsForAdmin($db){
+    try{
+        $sql ="SELECT * FROM cabins";
+        $statement = $db -> prepare($sql);
+        $statement -> execute();
+
+        while ($row = $statement->fetch()) {
+        echo '<div class="col-md-3"> 
+        <div class="cabin-single card thumbnail"> 
+        <img src="../assets/img/'.$row['feature_image'].'" class="img-responsive"> 
+        <div class="container"> 
+        <h3 id="thumbnail-label">'.$row['cabin_name'].'</span></h3> 
+        <p><a href="cabin.php?edit='.$row['id'].'" class="btn btn-success" role="button">Edit</a> 
+        <a href="cabin.php?del='.$row['id'].'" class="btn btn-default" role="button" onclick="return confirm(\'Are You sure?\')">Delete</a>
+        </p> 
+        </div> 
+        </div> 
+        </div>'; 
+}
+    }catch(PDOException $ex){
+        //
+    }
+}
+
+
+//Get all categories as options
+function printPlacesOptions($db, $id=''){
+    try {
+        $sql= 'SELECT * FROM places';
+        $statement = $db-> prepare($sql);
+        $statement -> execute();
+        $html="";       
+        while ($row = $statement->fetch()) {
+            if($id != ''){
+                if ($id ==$row['id'] ){ // If the provided ID is same as row
+                $html .= '<option value="'.$row['id'].'" selected> '.$row['cat_name'].'</option>';
+            }else{ //If the provided ID is not same as the row ID
+                $html .= '<option value="'.$row['id'].'"> '.$row['cat_name'].'</option>';
+            }
+            }else{ // If no ID was Given
+                $html .= '<option value="'.$row['id'].'"> '.$row['cat_name'].'</option>';
+            }
+        }
+
+        echo $html;
+    } catch (PDOException $e) {
+        echo $e->getMessage();
+    }
+}
+
+function addPriceFor($db, $cabin_id, $date_start, $date_end, $price, $regular = '0'){
+  try {
+    $statement= $db->prepare('INSERT INTO prices (cabin_id, date_start, date_end, price, regular) VALUES (:cabin_id, :date_start, :date_end, :price, :regular)');
+    $statement->execute([':cabin_id' => $cabin_id , ':date_start' => $date_start, ':date_end' => $date_end, ':price' => $price,':regular' => $regular]);        
+ } catch (PDOException $e) {
+     echo 'addPriceFor'. $e->getMessage();
+ }
+}
+
+function updatePriceFor($db, $cabin_id,$date_start, $date_end, $price,$regular){
+    try {
+    $statement= $db->prepare('UPDATE prices  SET price = :price ,date_start = :date_start, date_end = :date_end WHERE cabin_id = :cabin_id AND regular = :regular'); 
+    $statement->execute([':cabin_id' => $cabin_id, ':price' => $price, ':date_start' => $date_start, ':date_end' => $date_end , ':regular'=> $regular]);
+ } catch (PDOException $e) {
+     echo 'updatePriceFor:'.$e->getMessage();
+ }
+}
+
+function isCabinBooked($db, $cabin_id){
+    try {
+        $statement= $db->prepare('SELECT count(*) FROM cabin_booking WHERE cabin_id = :cabin_id');
+        $statement ->execute([':cabin_id' => $cabin_id]);
+        $row = $statement->fetch();
+        if ($row['count(*)'] == 0) {
+            return false;            
+        }else{
+            return true;
+        }
+    } catch (PDOException $e) {
+        echo $e->getMessage();
+    }
+}
+
+function getRegularPrice($db, $cabin_id){
+    try {
+        $statement=$db->prepare('SELECT price FROM prices WHERE cabin_id = :cabin_id AND regular = 1');
+        $statement->execute([':cabin_id' => $cabin_id]);
+        $row =  $statement->fetch();
+        return $row['price'];
+    } catch (PDOException $e) {
+        echo $e->getMessage();
+    }
+}
+
+function getDateOf($db, $cabin_id, $type = 'start', $regular = '0'){
+    try {
+        $sql = 'SELECT date_'.$type.' FROM prices WHERE regular = :regular AND cabin_id=:cabin_id';
+        $statement= $db->prepare($sql);
+        $statement->execute([':regular' => $regular, ':cabin_id' => $cabin_id]);
+        $row=$statement->fetch();
+        return $row['date_'.$type];
+    } catch (PDOException $e) {
+        echo $e->getMessage();
+    }
+}
+
+function printCabinsOption($db, $select = '-1'){
+    try {
+        $statement = $db->prepare('SELECT * FROM cabins');
+        $statement->execute();
+        while ($row = $statement->fetch()) {
+            $select = ($row['id'] == $select) ? 'selected': '';
+            echo '<option '.$select.' value="'.$row['id'].'">'.$row['cabin_name'].'</option>';
+        }
+    } catch (PDOException $e) {
+        echo $e->getMessage();
+    }
+}
+function getCabinNameOf($db, $cabin_id){
+    try {
+        $statement= $db->prepare('SELECT cabin_name FROM cabins WHERE id=:id');
+        $statement->execute([':id'=>$cabin_id]);
+        $row = $statement->fetch();
+        return $row['cabin_name'];
+    } catch (PDOException $e) {
+        echo $e->getMessage();
+    }
+}
+function getPlaceName($db, $id){
+    try {
+        $statement=$db->prepare('SELECT cat_name FROM places WHERE id=:id');
+        $statement->execute([':id' => $id ]);
+        $row = $statement->fetch();
+        return $row['cat_name'];
+    } catch (PDOException $e) {
+        $e->getMessage();
+    }
+}
+function getTypeName($db, $type_id){
+    $type = array(1 => 'Luxury', 2 => 'Contemporary', 3 => 'Original' );
+    foreach ($type as $key => $value) {
+        if ($type_id == $key) {
+            return $value;
+        }else{
+            return 'ERROR!!:'.$type_id.'=/='.$key;
+        }
+    }
+    
+}
+function printPricetableOf($db, $cabin_id){
+    try {
+        $statement= $db->prepare('SELECT * FROM prices WHERE cabin_id=:cabin_id');
+        $statement->execute([':cabin_id'=>$cabin_id]);
+        while ($row=$statement->fetch()) {
+            echo '<tr>
+                        <td><b><span class="package-price">'.$row['price'].'</span> <span class="currencysign">USD</span></b><input type="hidden" class="package-base-price" value="'.$row['price'].'"/></td>
+                        <td>'.$row['date_start'].'</td>
+                        <td>'.$row['date_end'].'</td>
+                        <td>2</td>
+                        <td>2</td>
+                      </tr>';
+        }
+    } catch (PDOException $e) {
+        echo $e->getMessage();
+    }
+}
+function printCabinsForFront($db){
+    try {
+        $statement=$db->prepare('SELECT * FROM cabins, prices WHERE cabins.id = prices.cabin_id');
+        $statement->execute();
+        while ($row =$statement->fetch()) {      
+?>
+<div class="col s12 package-link" data-start-date='<?= $row['date_start']?>' data-end-date='<?= $row['date_end']?>' data-type='<?= $row['type']?>' data-area='<?= $row['cat_id']?>'>    
+                    <div class="card zoom-out horizontal">
+                      <div class="card-image">
+                        
+                        <img src="assets/img/<?= $row['feature_image']?>">
+                        <p><?= getPlaceName($db, $row['cat_id']);?></p>
+                      </div>
+                      <div class="card-stacked">
+                        <div class="card-content">
+                            <div class="row">
+                                <div class="col s9">
+                                    <h5><?= $row['cabin_name']?></h5>
+                                  <ul class="collection">    
+                                        <li class="collection-item">                                          
+                                          <span class="title">Status</span>
+                                          <p><b><?= (isCabinBooked($db,$row['cabin_id']) == true) ? 'BOOKED' : 'NOT BOOKED';?></b></p>
+                                        </li>
+                                        <li class="collection-item">                                          
+                                          <span class="title">Cabin Type</span>
+                                          <p><b><?= getTypeName($db, $row['type'])?></b></p>            
+                                        </li>                                
+                                    </ul>
+                                  
+                                </div>
+                                <div class="col s3 border-left-dotted center-align">
+                                  <h4 class="package-price"><?= $row['price'];?></h4><input type='hidden' class='package-base-price' value="<?= $row['price']?>"/>
+                                  <p class="currencysign">USD</p>
+                                  <p><?= ($row['regular'] == 1) ? 'Regular Price' : 'Special Price<br>'.$row['date_start'].'<br> to <br>'.$row['date_end'];?></p>                                 
+                                </div>
+                            </div>            
+                        </div>
+                        <div class="card-action bricked">                          
+                        <a href="cabins.php?details=<?=$row['cabin_id']?>&p=<?= base64_encode($row['price'])?>&start=<?= $row['date_start']?>&end=<?= $row['date_end']?>" class="btn btn-large grey darken-4 right">Details</a>                               
+                      </div>
+                    </div>
+                  </div>            
+                </div>
+
+<?php  
+}
+} catch (PDOException $e) {
+        echo $e->getMessage();
+    }
+
+}
+
+
+
+
+
+function sendBookingEmail($email, $fullname, $cabin_name, $days,$date_start,$date_end,$cabin_price){
+    //Get data
+    $sender = $GLOBALS['email'];
+    $message = "<h2>Welcome to ".$GLOBALS['sitename']."</h2>
+                <p>This mail is to let you know that an account was created in <a href='".$GLOBALS['url']."'>".$GLOBALS['sitename']."</a>. We are Glad to let you know that Your Booking has been completed with the details below:</p>
+                <br/>
+                <table border='1'>
+                 <thead>
+                  <tr>
+                     <th>Email</th>
+                     <th>".$email."</th>
+                  </tr>
+                  <tr>
+                     <th>Name</th>
+                     <th>".$fullname."</th>
+                  </tr>
+                  <tr>
+                     <th>Cabin Name</th>
+                     <th>".$cabin_name."</th>
+                  </tr>                  
+                  <tr>
+                     <th>Price</th>
+                     <th>".$cabin_price."</th>
+                  </tr>                  
+                  <tr>
+                     <th> Booked For </th>
+                     <th>".$days."</th>
+                  </tr>
+                  <tr>
+                     <th> Arrival </th>
+                     <th>".$date_start."</th>
+                  </tr>
+                  <tr>
+                     <th> Checkout </th>
+                     <th>".$date_end."</th>
+                  </tr>
+                 </thead>
+                 </table>                 
+                  <br><br>
+                
+                <br><br>
+                <h1>Thank You. :)</h1>";
+
+
+    $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
+    try {
+        //Server settings
+        $mail->SMTPDebug = 0;                                 // Enable verbose debug output
+        $mail->isSMTP();                                      // Set mailer to use SMTP
+        $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+        $mail->SMTPAuth = true;                               // Enable SMTP authentication
+        $mail->Username = $GLOBALS['email'];                 // SMTP username
+        $mail->Password = $GLOBALS['email_password'];                           // SMTP password
+        $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+        $mail->Port = 587;                                    // TCP port to connect to
+
+        //Recipients
+        $mail->setFrom($sender, $GLOBALS['sitename']);
+        $mail->addAddress($email);     // Add a recipient
+        $mail->addReplyTo($sender);
+
+        //Content
+        $mail->isHTML(true);                                  // Set email format to HTML
+        $mail->Subject = $GLOBALS['sitename'].' BOOKING CONFIRMATION';
+        $mail->Body    = $message;
+        $mail->AltBody = 'This mail is to let you know that You have Booked a Cabin in  '.$GLOBALS['sitename'];
+
+        $mail->send();
+//        Return 'Message has been sent';
+    } catch (Exception $e) {
+//        Return 'Message could not be sent.';
+        echo 'Mailer Error: ' . $mail->ErrorInfo;
+    }
+}
+
+function bookCabin($db, $user_id, $cabin_id, $days){
+    try {
+        $statement = $db-> prepare('INSERT INTO cabin_booking (cabin_id, user_id, time, days) VALUES(:cabin_id, :user_id, now(),:days)');
+        $statement->execute([':cabin_id' => $cabin_id,':user_id'=> $user_id,':days'=>$days]);
+        if ($statement->rowCount() ==1 ) {
+            return true;
+        }else{
+            return false;
+        }
+    } catch (PDOException $e) {
+        echo $e->getMessage();
+    }
+}
+function getCabinInfoOf($db, $cabin_id, $info='cabin_name'){
+    try {
+        $sql = 'SELECT '.$info.' FROM cabins WHERE id=:id';
+        $statement= $db->prepare($sql);
+        $statement->execute([':id'=>$cabin_id]);
+        $row = $statement -> fetch();
+
+        return $row[$info];
+    } catch (PDOException $e) {
+        echo $e->getMessage();
+    }
+}
+function getUserInfoOf($db, $user_id, $info='fname'){
+    try {
+        $sql = 'SELECT '.$info.' FROM users WHERE id=:id';
+        $statement= $db->prepare($sql);
+        $statement->execute([':id'=>$user_id]);
+        $row = $statement -> fetch();
+        return $row[$info];
+    } catch (PDOException $e) {
+        echo $e->getMessage();
+    }
+}
+function printAllBookingsTable($db){
+    try {
+        $statement=$db->prepare('SELECT * FROM cabin_booking');
+        $statement->execute();
+        while ($row=$statement->fetch()) {
+            $booking_type = (getCabinInfoOf($db,$row['cabin_id'],'type') == 4) ? '4 days (WeekEnd)' : '5 days (Mid Week)' ;
+        
+        ?>
+                <tr>
+                    <td><?= getCabinNameOf($db,$row['cabin_id'])?></td>
+                    <td><?= getTypeName($db,getCabinInfoOf($db, $row['cabin_id'], 'type'))?></td>
+                    <td><?= getPlaceName($db,getCabinInfoOf($db, $row['cabin_id'], 'cat_id'))?></td>
+                    <td><?= getUserInfoOf($db,$row['user_id'],'fname').' '.getUserInfoOf($db, $row['user_id'], 'lname');?></td>
+                    <td><?= $row['time']?></td>
+                    <td><?= $booking_type?></td>
+                    <td><a href="bookings.php?checkout=1&user_id=<?=$row['user_id']?>&cabin_id=<?= $row['cabin_id']?>" onclick="return confirm('are you sure?');" class="del_cat btn btn-danger"> Checkout</a><a href="bookings.php?modify=1&user_id=<?=$row['user_id']?>&cabin_id=<?= $row['cabin_id']?>" class="del_cat btn btn-info"> Modify</a></td>
+                </tr>
+
+        <?php
+        }
+    } catch (PDOException $e) {
+        echo $e->getMessage();
+    }
+}
+
+
+function printGalleryCoreOf($db, $cabin_id, $tagline, $slogan, $cabin_price){
+    try{
+        $statement= $db->prepare('SELECT * FROM cabin_gallery WHERE cabin_id = :cabin_id');
+        $statement -> execute([':cabin_id'=>$cabin_id]);
+        $html ='';
+        while ($row = $statement->fetch()){
+            ?>
+            <li>
+                <img src="assets/img/gallery/<?= $row['img']?>"> <!-- random image -->
+                <div class="caption left-align">
+                    <h4><?= $tagline;?></h4>
+                    <h5 class="light grey-text text-lighten-3"><?= $slogan;?></h5>
+                </div>
+                <div class="caption right-align">
+                    <h4 class="package-price"><?= $cabin_price?></h4><input type='hidden' class='package-base-price' value="<?= $cabin_price?>"/>
+                    <p class="light grey-text text-lighten-3 currencysign">USD</p>                                 
+                </div>
+            </li>
+<?php
+        }
+    }catch (PDOException $e){
+        echo $e->getMessage();
+    }
+}
+
+
+function generateCards($db,$for='homepage',$amount=6, $type='all'){
+    try{
+            if ($type==='all'){
+                $statement= $db->prepare('SELECT * FROM cabins, places, prices WHERE prices.cabin_id = cabins.id AND places.id=cabins.cat_id LIMIT 6 ');
+                $statement->execute([':lmt' => $amount]);
+            }else{
+                $statement= $db->prepare('SELECT * FROM cabins, places, prices WHERE prices.cabin_id = cabins.id AND places.id=cabins.cat_id AND cabins.type = :type AND prices.regular = 1 LIMIT 6 ');
+                $statement->execute([':type'=> $type]);
+            }
+
+
+        $i = 0;
+        while ($row = $statement->fetch()) {
+            ?>
+            <div class="col m4 animated wow fadeInUp" data-wow-delay="<?= $i?>s">
+                   <div class="card rotate-img hoverable with-fav" style="overflow: visible;">
+                    <div class="card-image waves-effect waves-block waves-light">
+                      <img class="activator" src="assets/img/<?= $row['feature_image'];?>">
+                        <h6 class="price-cat"><?=$row['cat_name']?> <span class="right purple"><b><span class="package-price"><?= $row['price'];?></span><input type='hidden' class='package-base-price' value="<?= $row['price']?>"/>
+                                  <span class="currencysign">USD</span></b></span></h6>
+                        <div class="card-content no-padding">
+                      <span class="card-title activator"><b><?= $row['cabin_name']?></b> </span>
+                    </div>
+                    </div>
+
+                    <div class="card-reveal" style="display: none; transform: translateY(0px);">
+                      <span class="card-title grey-text text-darken-4"><?= $row['cabin_name']?><i class="material-icons right">close</i></span>
+                      <?= $row['destination_details']?>
+                    </div>
+                  </div>
+                </div>
+
+            <?php
+            $i += 0.4;
+        }
+    }catch (PDOException $e){
+        echo 'YOLOY    '.$e->getMessage();
+    }
+
+}
+
+
+
 ?>

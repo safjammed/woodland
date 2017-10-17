@@ -54,7 +54,7 @@ include_once 'resource/session.php';
                 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a href="index.php">Home</a></li>                    
-                    <li><a class="dropdown-button" href="#!" data-activates="dropdownCabins" data-belowOrigin="true" data-constrainWidth="false">Find a Cabin<i class="material-icons right">arrow_drop_down</i></a></li>                   
+                    <li><a class="dropdown-button" href="cabins.php?type=1">Find a Cabin</a></li>                   
                     <li><a class="dropdown-button" href="forum/">Community Forum</a></li>                    
                      <?php if((isset($_SESSION['id']) || isCookieValid($db))): ?>
                       <li><a class='dropdown-button' href='#!' data-activates='feature-dropdown' data-belowOrigin="true" data-constrainWidth="false">My Account<i class="material-icons bt">arrow_drop_down</i></a></li>
@@ -75,16 +75,10 @@ include_once 'resource/session.php';
                     </li>
                 </ul>
                 
-                <ul id="dropdownCabins" class="dropdown-content">
-                    <li><a href="cabins.php?type=1">Luxuxry Cabins</a></li>
-                    <li><a href="cabins.php?type=2">Contemporary Cabins</a></li>
-                    <li><a href="cabins.php?type=3">Original Cabins</a></li>
-                    <li class="divider"></li>
-                    <li><a href="cabins.php">All</a></li>
-                </ul>                
+                             
                 <ul id='feature-dropdown' class='dropdown-content'>
-                  <li><a href="profile.php">Access Forum</a></li>
-                  <li><a href="profile.php?settings=1">Profile Settings</a></li>
+                  <li><a href="forum/">Access Forum</a></li>
+                  <!-- <li><a href="profile.php?settings=1">Profile Settings</a></li> -->
                   <li class="divider"></li>
                   <li><a href="logout.php">Logout</a></li>          
                 </ul>

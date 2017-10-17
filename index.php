@@ -25,46 +25,8 @@ include_once 'partials/head.php';
                     Orford</div>
                 <div class="ms-layer  msp-preset-32" style="width:260px;" data-effect="t(true,-50,n,100,n,n,n,n,n,n,n,n,n,n,n)" data-duration="2200" data-ease="easeOutQuint" data-parallax="3" data-offset-x="60" data-offset-y="191" data-origin="ml" data-position="normal">
                     Go into the woods and drink a cup of coffee.</div>
-            </div>
-            <div class="ms-slide" data-delay="5" data-fill-mode="fill">
-                <div class="ms-layer  msp-cn-156-49" style="width:1366px;height:768px;" data-ease="easeOutQuint" data-offset-x="0" data-offset-y="0" data-origin="mc" data-position="normal" data-wait="true">
-                </div>
-                <img class="ms-layer" src="assets/css/blank.gif" data-src="http://lorempixel.com/800/600/" data-effect="t(false,n,n,-888,n,n,n,n,n,n,n,n,0,n,n)" data-duration="3400" data-ease="easeOutQuart" data-parallax="150" data-type="image" data-origin="mr" />
-                <div class="ms-layer  msp-cn-156-45" style="" data-effect="t(true,-150,n,700,n,n,n,n,n,n,n,n,n,n,n)" data-duration="2800" data-ease="easeOutQuart" data-parallax="80" data-offset-x="60" data-offset-y="0" data-origin="ml" data-position="normal">
-                    Slide 2</div>
-                <div class="ms-layer  msp-preset-30" style="" data-effect="t(true,-100,n,500,n,n,n,n,n,n,n,n,n,n,n)" data-duration="2600" data-ease="easeOutQuint" data-parallax="10" data-offset-x="60" data-offset-y="110" data-origin="ml" data-position="normal">
-                    $400</div>
-                <div class="ms-layer  msp-preset-31" style="" data-effect="t(true,-80,n,300,n,n,n,n,n,n,n,n,n,n,n)" data-duration="2400" data-ease="easeOutQuint" data-parallax="6" data-offset-x="60" data-offset-y="143" data-origin="ml" data-position="normal">
-                    HELLOW</div>
-                <div class="ms-layer  msp-preset-32" style="width:260px;" data-effect="t(true,-50,n,100,n,n,n,n,n,n,n,n,n,n,n)" data-duration="2200" data-ease="easeOutQuint" data-parallax="3" data-offset-x="60" data-offset-y="191" data-origin="ml" data-position="normal">
-                    LOREM ISPUM DOLOR SIT AMET</div>
-            </div>
-            <div class="ms-slide" data-delay="5" data-fill-mode="fill">
-                <div class="ms-layer  msp-cn-156-49" style="width:1366px;height:768px;" data-ease="easeOutQuint" data-offset-x="0" data-offset-y="0" data-origin="mc" data-position="normal" data-wait="true">
-                </div>
-                <img class="ms-layer" src="assets/css/blank.gif" data-src="http://lorempixel.com/800/600/" data-effect="t(false,n,n,-888,n,n,n,n,n,n,n,n,0,n,n)" data-duration="3400" data-ease="easeOutQuart" data-parallax="150" data-type="image" data-origin="mr" />
-                <div class="ms-layer  msp-cn-156-45" style="" data-effect="t(true,-150,n,700,n,n,n,n,n,n,n,n,n,n,n)" data-duration="2800" data-ease="easeOutQuart" data-parallax="80" data-offset-x="60" data-offset-y="0" data-origin="ml" data-position="normal">
-                    Slide 2</div>
-                <div class="ms-layer  msp-preset-30" style="" data-effect="t(true,-100,n,500,n,n,n,n,n,n,n,n,n,n,n)" data-duration="2600" data-ease="easeOutQuint" data-parallax="10" data-offset-x="60" data-offset-y="110" data-origin="ml" data-position="normal">
-                    $400</div>
-                <div class="ms-layer  msp-preset-31" style="" data-effect="t(true,-80,n,300,n,n,n,n,n,n,n,n,n,n,n)" data-duration="2400" data-ease="easeOutQuint" data-parallax="6" data-offset-x="60" data-offset-y="143" data-origin="ml" data-position="normal">
-                    HELLOW</div>
-                <div class="ms-layer  msp-preset-32" style="width:260px;" data-effect="t(true,-50,n,100,n,n,n,n,n,n,n,n,n,n,n)" data-duration="2200" data-ease="easeOutQuint" data-parallax="3" data-offset-x="60" data-offset-y="191" data-origin="ml" data-position="normal">
-                    LOREM ISPUM DOLOR SIT AMET</div>
-            </div>
-            <div class="ms-slide" data-delay="5" data-fill-mode="fill">
-                <div class="ms-layer  msp-cn-156-49" style="width:1366px;height:768px;" data-ease="easeOutQuint" data-offset-x="0" data-offset-y="0" data-origin="mc" data-position="normal" data-wait="true">
-                </div>
-                <img class="ms-layer" src="assets/css/blank.gif" data-src="http://lorempixel.com/800/600/" data-effect="t(false,n,n,-888,n,n,n,n,n,n,n,n,0,n,n)" data-duration="3400" data-ease="easeOutQuart" data-parallax="150" data-type="image" data-origin="mr" />
-                <div class="ms-layer  msp-cn-156-45" style="" data-effect="t(true,-150,n,700,n,n,n,n,n,n,n,n,n,n,n)" data-duration="2800" data-ease="easeOutQuart" data-parallax="80" data-offset-x="60" data-offset-y="0" data-origin="ml" data-position="normal">
-                    Slide 2</div>
-                <div class="ms-layer  msp-preset-30" style="" data-effect="t(true,-100,n,500,n,n,n,n,n,n,n,n,n,n,n)" data-duration="2600" data-ease="easeOutQuint" data-parallax="10" data-offset-x="60" data-offset-y="110" data-origin="ml" data-position="normal">
-                    $400</div>
-                <div class="ms-layer  msp-preset-31" style="" data-effect="t(true,-80,n,300,n,n,n,n,n,n,n,n,n,n,n)" data-duration="2400" data-ease="easeOutQuint" data-parallax="6" data-offset-x="60" data-offset-y="143" data-origin="ml" data-position="normal">
-                    HELLOW</div>
-                <div class="ms-layer  msp-preset-32" style="width:260px;" data-effect="t(true,-50,n,100,n,n,n,n,n,n,n,n,n,n,n)" data-duration="2200" data-ease="easeOutQuint" data-parallax="3" data-offset-x="60" data-offset-y="191" data-origin="ml" data-position="normal">
-                    LOREM ISPUM DOLOR SIT AMET</div>
-            </div>
+            </div>                        
+            
             <div class="ms-slide" data-delay="5" data-fill-mode="fill">
                 <div class="ms-layer  msp-cn-156-35" style="width:1366px;height:768px;" data-ease="easeOutQuint" data-offset-x="0" data-offset-y="0" data-origin="mc" data-position="normal" data-wait="true">
                 </div>
@@ -155,106 +117,11 @@ include_once 'partials/head.php';
         
         <div class="section-container container">
             <div class="row">
-                <div class="col m4 animated wow fadeInUp" data-wow-delay="0.0s">
-                   <div class="card rotate-img hoverable with-fav" style="overflow: visible;">
-                    <div class="card-image waves-effect waves-block waves-light">
-                      <img class="activator" src="https://placeimg.com/640/480/nature">
-                        <h6 class="price-cat">Some category <span class="right purple">$<b>50</b></span></h6>
-                        <div class="card-content no-padding">
-                      <span class="card-title activator"><b>Card Title</b><i class="fa fa-heart-o fa-2x waves-effect right tooltipped" data-tooltip="Add to favorites" data-position="top" data-tooltip-id="c3c35c84-c9ea-1a5a-1f24-68ed2430d4ed"></i> </span>                                        
-                    </div>
-                    </div>
                     
-                    <div class="card-reveal" style="display: none; transform: translateY(0px);">
-                      <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                      <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                    </div>
-                  </div>
-                </div>  
-                <div class="col m4 animated wow fadeInUp" data-wow-delay="0.3s">
-                   <div class="card rotate-img hoverable with-fav" style="overflow: visible;">
-                    <div class="card-image waves-effect waves-block waves-light">
-                      <img class="activator" src="https://placeimg.com/640/480/nature">
-                        <h6 class="price-cat">Some category <span class="right purple">$<b>50</b></span></h6>
-                        <div class="card-content no-padding">
-                      <span class="card-title activator"><b>Card Title</b><i class="fa fa-heart-o fa-2x waves-effect right tooltipped" data-tooltip="Add to favorites" data-position="top" data-tooltip-id="c3c35c84-c9ea-1a5a-1f24-68ed2430d4ed"></i> </span>                                        
-                    </div>
-                    </div>
-                    
-                    <div class="card-reveal" style="display: none; transform: translateY(0px);">
-                      <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                      <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                    </div>
-                  </div>
-                </div> 
-                <div class="col m4 animated wow fadeInUp" data-wow-delay=".8s">
-                   <div class="card rotate-img hoverable with-fav" style="overflow: visible;">
-                    <div class="card-image waves-effect waves-block waves-light">
-                      <img class="activator" src="https://placeimg.com/640/480/nature">
-                        <h6 class="price-cat">Some category <span class="right purple">$<b>50</b></span></h6>
-                        <div class="card-content no-padding">
-                      <span class="card-title activator"><b>Card Title</b><i class="fa fa-heart-o fa-2x waves-effect right tooltipped" data-tooltip="Add to favorites" data-position="top" data-tooltip-id="c3c35c84-c9ea-1a5a-1f24-68ed2430d4ed"></i> </span>                                        
-                    </div>
-                    </div>
-                    
-                    <div class="card-reveal" style="display: none; transform: translateY(0px);">
-                      <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                      <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                    </div>
-                  </div>
-                </div>     
-                <div class="col m4 animated wow fadeInUp" data-wow-delay="0.2s">
-                   <div class="card rotate-img hoverable with-fav" style="overflow: visible;">
-                    <div class="card-image waves-effect waves-block waves-light">
-                      <img class="activator" src="https://placeimg.com/640/480/nature">
-                        <h6 class="price-cat">Some category <span class="right purple">$<b>50</b></span></h6>
-                        <div class="card-content no-padding">
-                      <span class="card-title activator"><b>Card Title</b><i class="fa fa-heart-o fa-2x waves-effect right tooltipped" data-tooltip="Add to favorites" data-position="top" data-tooltip-id="c3c35c84-c9ea-1a5a-1f24-68ed2430d4ed"></i> </span>                                        
-                    </div>
-                    </div>
-                    
-                    <div class="card-reveal" style="display: none; transform: translateY(0px);">
-                      <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                      <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                    </div>
-                  </div>
-                </div>  
-                <div class="col m4 animated wow fadeInUp" data-wow-delay="0.4s">
-                   <div class="card rotate-img hoverable with-fav" style="overflow: visible;">
-                    <div class="card-image waves-effect waves-block waves-light">
-                      <img class="activator" src="https://placeimg.com/640/480/nature">
-                        <h6 class="price-cat">Some category <span class="right purple">$<b>50</b></span></h6>
-                        <div class="card-content no-padding">
-                      <span class="card-title activator"><b>Card Title</b><i class="fa fa-heart-o fa-2x waves-effect right tooltipped" data-tooltip="Add to favorites" data-position="top" data-tooltip-id="c3c35c84-c9ea-1a5a-1f24-68ed2430d4ed"></i> </span>                                        
-                    </div>
-                    </div>
-                    
-                    <div class="card-reveal" style="display: none; transform: translateY(0px);">
-                      <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                      <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                    </div>
-                  </div>
-                </div> 
-                <div class="col m4 animated wow fadeInUp" data-wow-delay="1s">
-                   <div class="card rotate-img hoverable with-fav" style="overflow: visible;">
-                    <div class="card-image waves-effect waves-block waves-light">
-                      <img class="activator" src="https://placeimg.com/640/480/nature">
-                        <h6 class="price-cat">Some category <span class="right purple">$<b>50</b></span></h6>
-                        <div class="card-content no-padding">
-                      <span class="card-title activator"><b>Card Title</b><i class="fa fa-heart-o fa-2x waves-effect right tooltipped" data-tooltip="Add to favorites" data-position="top" data-tooltip-id="c3c35c84-c9ea-1a5a-1f24-68ed2430d4ed"></i> </span>                                        
-                    </div>
-                    </div>
-                    
-                    <div class="card-reveal" style="display: none; transform: translateY(0px);">
-                      <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                      <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                    </div>
-                  </div>
-                </div>     
-
+                <?php generateCards($db,'homepage',6,'1') ?>
             </div>
             <div class="row center-align">
-                    <a class="waves-effect waves-light pink accent-2 btn animated wow bounceIn"><i class="material-icons left">cloud</i>More Luxyry Cabins</a>
+                    <a class="waves-effect waves-light pink accent-2 btn animated wow bounceIn" ahref="cabins.php?type=1"><i class="material-icons left">cloud</i>More Luxyry Cabins</a>
                     <br><br>
                     <div class="divider">
                         
@@ -274,102 +141,7 @@ include_once 'partials/head.php';
         
         <div class="section-container container">
             <div class="row">
-                <div class="col m4 animated wow fadeInUp" data-wow-delay="0.0s">
-                   <div class="card rotate-img hoverable with-fav" style="overflow: visible;">
-                    <div class="card-image waves-effect waves-block waves-light">
-                      <img class="activator" src="https://placeimg.com/640/480/nature">
-                        <h6 class="price-cat">Some category <span class="right purple">$<b>50</b></span></h6>
-                        <div class="card-content no-padding">
-                      <span class="card-title activator"><b>Card Title</b><i class="fa fa-heart-o fa-2x waves-effect right tooltipped" data-tooltip="Add to favorites" data-position="top" data-tooltip-id="c3c35c84-c9ea-1a5a-1f24-68ed2430d4ed"></i> </span>                                        
-                    </div>
-                    </div>
-                    
-                    <div class="card-reveal" style="display: none; transform: translateY(0px);">
-                      <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                      <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                    </div>
-                  </div>
-                </div>  
-                <div class="col m4 animated wow fadeInUp" data-wow-delay="0.3s">
-                   <div class="card rotate-img hoverable with-fav" style="overflow: visible;">
-                    <div class="card-image waves-effect waves-block waves-light">
-                      <img class="activator" src="https://placeimg.com/640/480/nature">
-                        <h6 class="price-cat">Some category <span class="right purple">$<b>50</b></span></h6>
-                        <div class="card-content no-padding">
-                      <span class="card-title activator"><b>Card Title</b><i class="fa fa-heart-o fa-2x waves-effect right tooltipped" data-tooltip="Add to favorites" data-position="top" data-tooltip-id="c3c35c84-c9ea-1a5a-1f24-68ed2430d4ed"></i> </span>                                        
-                    </div>
-                    </div>
-                    
-                    <div class="card-reveal" style="display: none; transform: translateY(0px);">
-                      <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                      <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                    </div>
-                  </div>
-                </div> 
-                <div class="col m4 animated wow fadeInUp" data-wow-delay=".8s">
-                   <div class="card rotate-img hoverable with-fav" style="overflow: visible;">
-                    <div class="card-image waves-effect waves-block waves-light">
-                      <img class="activator" src="https://placeimg.com/640/480/nature">
-                        <h6 class="price-cat">Some category <span class="right purple">$<b>50</b></span></h6>
-                        <div class="card-content no-padding">
-                      <span class="card-title activator"><b>Card Title</b><i class="fa fa-heart-o fa-2x waves-effect right tooltipped" data-tooltip="Add to favorites" data-position="top" data-tooltip-id="c3c35c84-c9ea-1a5a-1f24-68ed2430d4ed"></i> </span>                                        
-                    </div>
-                    </div>
-                    
-                    <div class="card-reveal" style="display: none; transform: translateY(0px);">
-                      <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                      <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                    </div>
-                  </div>
-                </div>     
-                <div class="col m4 animated wow fadeInUp" data-wow-delay=".1s">
-                   <div class="card rotate-img hoverable with-fav" style="overflow: visible;">
-                    <div class="card-image waves-effect waves-block waves-light">
-                      <img class="activator" src="https://placeimg.com/640/480/nature">
-                        <h6 class="price-cat">Some category <span class="right purple">$<b>50</b></span></h6>
-                        <div class="card-content no-padding">
-                      <span class="card-title activator"><b>Card Title</b><i class="fa fa-heart-o fa-2x waves-effect right tooltipped" data-tooltip="Add to favorites" data-position="top" data-tooltip-id="c3c35c84-c9ea-1a5a-1f24-68ed2430d4ed"></i> </span>                                        
-                    </div>
-                    </div>
-                    
-                    <div class="card-reveal" style="display: none; transform: translateY(0px);">
-                      <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                      <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                    </div>
-                  </div>
-                </div>  
-                <div class="col m4 animated wow fadeInUp" data-wow-delay=".5s">
-                   <div class="card rotate-img hoverable with-fav" style="overflow: visible;">
-                    <div class="card-image waves-effect waves-block waves-light">
-                      <img class="activator" src="https://placeimg.com/640/480/nature">
-                        <h6 class="price-cat">Some category <span class="right purple">$<b>50</b></span></h6>
-                        <div class="card-content no-padding">
-                      <span class="card-title activator"><b>Card Title</b><i class="fa fa-heart-o fa-2x waves-effect right tooltipped" data-tooltip="Add to favorites" data-position="top" data-tooltip-id="c3c35c84-c9ea-1a5a-1f24-68ed2430d4ed"></i> </span>                                        
-                    </div>
-                    </div>
-                    
-                    <div class="card-reveal" style="display: none; transform: translateY(0px);">
-                      <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                      <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                    </div>
-                  </div>
-                </div> 
-                <div class="col m4 animated wow fadeInUp" data-wow-delay="1s">
-                   <div class="card rotate-img hoverable with-fav" style="overflow: visible;">
-                    <div class="card-image waves-effect waves-block waves-light">
-                      <img class="activator" src="https://placeimg.com/640/480/nature">
-                        <h6 class="price-cat">Some category <span class="right purple">$<b>50</b></span></h6>
-                        <div class="card-content no-padding">
-                      <span class="card-title activator"><b>Card Title</b><i class="fa fa-heart-o fa-2x waves-effect right tooltipped" data-tooltip="Add to favorites" data-position="top" data-tooltip-id="c3c35c84-c9ea-1a5a-1f24-68ed2430d4ed"></i> </span>                                        
-                    </div>
-                    </div>
-                    
-                    <div class="card-reveal" style="display: none; transform: translateY(0px);">
-                      <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                      <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                    </div>
-                  </div>
-                </div>     
+                <?php generateCards($db,'homepage',6,'2') ?>     
 
             </div>
             <div class="row center-align">
@@ -386,11 +158,11 @@ include_once 'partials/head.php';
     <div class="container">
         <div class="row">
         <div class="banner colored">
-            <h4>Discover our Top tours <span>from $34</span></h4>
+            <h4>Discover our Luxury Cabins <span>from $34</span></h4>
             <p>
                 Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in.
             </p>
-            <a href="single_tour.html" class="btn_1 white">Read more</a>
+            <a href="cabins.php?type=1" class="btn_1 white">Read more</a>
         </div>    
         </div>
         <div class="row">
@@ -399,18 +171,18 @@ include_once 'partials/head.php';
                     <img src="assets/images/bus.jpg" alt="" class="responsive-img">                    
                 </div> 
                 <div class="info-title center-align">
-                   <h4><b><span class="purple-text">Sightseen tour</span> booking</b></h4>
+                   <h4><b><span class="purple-text">Perfect</span> retreat</b></h4>
                    <p>
-                            Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex.
-                        </p>
+                      Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex.
+                    </p>
                 </div>
             </div>     
              <div class="col l3 m3">
                 <div class="img-holder">
-                    <img src="assets/images/bus.jpg" alt="" class="responsive-img">                    
+                    <img src="assets/images/transfer.jpg" alt="" class="responsive-img">                    
                 </div> 
                 <div class="info-title center-align">
-                   <h4><b><span class="purple-text">Sightseen tour</span> booking</b></h4>
+                   <h4><b><span class="purple-text">Woodland </span> Sightseen</b></h4>
                    <p>
                             Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex.
                         </p>
@@ -418,10 +190,10 @@ include_once 'partials/head.php';
             </div> 
              <div class="col l3 m3">
                 <div class="img-holder">
-                    <img src="assets/images/bus.jpg" alt="" class="responsive-img">                    
+                    <img src="assets/images/guide.jpg" alt="" class="responsive-img">                    
                 </div> 
                 <div class="info-title center-align">
-                   <h4><b><span class="purple-text">Sightseen tour</span> booking</b></h4>
+                   <h4><b><span class="purple-text">Friendly</span> Customer Care</b></h4>
                    <p>
                             Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex.
                         </p>
@@ -429,10 +201,10 @@ include_once 'partials/head.php';
             </div> 
              <div class="col l3 m3">
                 <div class="img-holder">
-                    <img src="assets/images/bus.jpg" alt="" class="responsive-img">                    
+                    <img src="assets/img/happy.jpg" alt="" class="responsive-img">                    
                 </div> 
                 <div class="info-title center-align">
-                   <h4><b><span class="purple-text">Sightseen tour</span> booking</b></h4>
+                   <h4><b><span class="purple-text">Perfect</span> For Family</b></h4>
                    <p>
                             Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex.
                         </p>

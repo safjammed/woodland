@@ -156,12 +156,18 @@ $(function(){
 				data: { toCur: toCurrency, fromCur: fromCurrency, amnt: amount}
 			}).done(function( price ) {
 				pPriceObj.siblings('.package-price').html(price);
-				$('h4.package-price').siblings('.currencysign').text(toCurrency);
+				$('h4.package-price,span.package-price').siblings('.currencysign').map(function(index, elem) {
+					$(this).text(toCurrency);
+					console.log('NOT USD');
+				});
 				// alert( "Data: " + msg );
 			});
 		}else{
 			pPriceObj.siblings('.package-price').html(amount);
-			$('h4.package-price').siblings('.currencysign').text('USD');
+			$('h4.package-price,span.package-price').siblings('.currencysign').map(function(index, elem) {
+					$(this).text('USD');
+					console.log('ONLY USD');
+				});
 		}
 	});
 	//fromCurrency = $('#currency').val();

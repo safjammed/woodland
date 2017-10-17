@@ -12,7 +12,7 @@ if(isset($_POST['signupBtn'])){
 
     //array containing form validation required fields
 
-    $required_fields = array('email', 'password','fname','lname');
+    $required_fields = array('email', 'password','fname','lname','username','address', 'gender');
 
     //check empty fields
     $form_errors = array_merge($form_errors, check_empty_fields($required_fields));
@@ -21,7 +21,6 @@ if(isset($_POST['signupBtn'])){
 
     //checking the minimum lengths
     $form_errors = array_merge($form_errors, check_min_legth($minimum_lengths_fields));
-
     //validating the email from the posed data
 
     $form_errors = array_merge($form_errors, check_email($_POST));
@@ -31,9 +30,15 @@ if(isset($_POST['signupBtn'])){
     $password = $_POST['password'];    
     $fname= $_POST['fname'];
     $lname =  $_POST['lname'];
-    
+    $address = $_POST['address'];
+    $username = $_POST['username'];
+    $gender = $_POST['gender'];
+    print_r($gender);
     if(checkDuplicateEntries("users","email",$email,$db)){
         swal('Sorry','Email is Already Taken','error');
+    }
+    if(checkDuplicateEntries("users","username",$username,$db)){
+        swal('Sorry','Username is Already Taken','error');
     }
     //now if there's no error then
     else if(empty($form_errors)){
@@ -43,14 +48,14 @@ if(isset($_POST['signupBtn'])){
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
         try{
             //create SQL insert statement
-            $sqlInsert = "INSERT INTO users (email, password, fname, lname, join_date)
-              VALUES (:email, :password, :fname, :lname, now())";
+            $sqlInsert = "INSERT INTO users (email, password, fname, lname, join_date, address, username,gender)
+              VALUES (:email, :password, :fname, :lname, now(), :address, :username,:gender)";
 
             //use PDO prepared to sanitize data
             $statement = $db->prepare($sqlInsert);
 
             //add the data into the database
-            $statement->execute(array(':email' => $email, ':password' => $hashed_password, ':fname' => $fname, ':lname' => $lname));
+            $statement->execute(array(':email' => $email, ':password' => $hashed_password, ':fname' => $fname, ':lname' => $lname ,':address'=>$address, ':username' => $username, ':gender'=>$gender));
             $this_id=$db->lastInsertId();
             //check if one new row was created
             if($statement->rowCount() == 1){

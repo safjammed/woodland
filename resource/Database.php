@@ -1,8 +1,6 @@
 <?php
-$username ="root";
-$dsn='mysql:host=localhost;dbname=woodland_db';
-$password='';
 
+include_once __DIR__.'\config.php';
 
 try{
 	$db = new PDO($dsn, $username,$password);
@@ -11,4 +9,5 @@ try{
 
 }catch(PDOException $ex){
 	echo "connection_failed".$ex->getMessage();
+	header('location:'.__DIR__.'../install.php');
 }
